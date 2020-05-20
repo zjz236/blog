@@ -4,7 +4,7 @@ export default defineConfig({
   title: '小朱blogs',
   base: '/blog/',
   publicPath: '/blog/',
-  logo: '/logo.png',
+  logo: 'logo.png',
   navs: [
     {
       title: 'GitHub',
