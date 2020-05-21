@@ -5,6 +5,7 @@ export default defineConfig({
   base: '/blog/',
   publicPath: '/blog/',
   logo: 'logo.png',
+  exportStatic: {},
   navs: [
     {
       title: 'GitHub',
