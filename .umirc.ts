@@ -4,7 +4,8 @@ export default defineConfig({
   title: '小朱blogs',
   base: '/blog/',
   publicPath: '/blog/',
-  logo: 'logo.png',
+  logo: '/blog/logo.png',
+  favicon: '/blog/favicon.ico',
   exportStatic: {},
   navs: [
     {
