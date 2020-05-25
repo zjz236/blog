@@ -20,7 +20,7 @@ dev: {
  }
 ```
 
-如果后端的地址是http://aaa.com:3000，这时候在dev的proxyTable下如下所示：
+如果后端的地址是http://aaa.com:3000 ，这时候在dev的proxyTable下如下所示：
 
 ```javascript
 proxyTable: [{
