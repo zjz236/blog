@@ -16,6 +16,7 @@ export default defineConfig({
   scripts: [
     { src: 'https://imsun.github.io/gitment/dist/gitment.browser.js' },
     `var gitment = new Gitment({
+      id: '',
       owner: 'zjz236',
       repo: 'blog_comments',
       oauth: {
@@ -23,7 +24,7 @@ export default defineConfig({
         client_secret: '5cb1575776ef8f28e0abe651fa625d95dda2d8c6',
       },
     })
-    gitment.render('root')`,
+    gitment.render((document.getElementById('root'))`,
   ],
   navs: [
     {
