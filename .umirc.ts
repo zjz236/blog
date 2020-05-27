@@ -7,13 +7,6 @@ export default defineConfig({
   logo: '/blog/logo.png',
   favicon: '/blog/favicon.ico',
   exportStatic: {},
-  links: [
-    {
-      rel: 'stylesheet',
-      href: 'https://imsun.github.io/gitment/style/default.css',
-    },
-  ],
-  scripts: [{ src: 'https://imsun.github.io/gitment/dist/gitment.browser.js' }],
   navs: [
     {
       title: 'GitHub',
