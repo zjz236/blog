@@ -13,19 +13,7 @@ export default defineConfig({
       href: 'https://imsun.github.io/gitment/style/default.css',
     },
   ],
-  scripts: [
-    { src: 'https://imsun.github.io/gitment/dist/gitment.browser.js' },
-    `var gitment = new Gitment({
-      id: '',
-      owner: 'zjz236',
-      repo: 'blog_comments',
-      oauth: {
-        client_id: '181f82e74c1bef24a114',
-        client_secret: '5cb1575776ef8f28e0abe651fa625d95dda2d8c6',
-      },
-    })
-    gitment.render((document.getElementById('root'))`,
-  ],
+  scripts: [{ src: 'https://imsun.github.io/gitment/dist/gitment.browser.js' }],
   navs: [
     {
       title: 'GitHub',
