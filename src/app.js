@@ -1,5 +1,4 @@
 var gitment = new Gitment({
-  id: '',
   owner: 'zjz236',
   repo: 'blog_comments',
   oauth: {
