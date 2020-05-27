@@ -1,3 +1,4 @@
+console.log(document.getElementById('root'));
 var gitment = new Gitment({
   owner: 'zjz236',
   repo: 'blog_comments',
