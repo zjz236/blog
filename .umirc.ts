@@ -7,7 +7,12 @@ export default defineConfig({
   logo: '/blog/logo.png',
   favicon: '/blog/favicon.ico',
   exportStatic: {},
-  links: ['https://imsun.github.io/gitment/style/default.css'],
+  links: [
+    {
+      rel: 'stylesheet',
+      href: 'https://imsun.github.io/gitment/style/default.css',
+    },
+  ],
   scripts: [
     { src: 'https://imsun.github.io/gitment/dist/gitment.browser.js' },
     `var gitment = new Gitment({
@@ -19,7 +24,7 @@ export default defineConfig({
         client_secret: '5cb1575776ef8f28e0abe651fa625d95dda2d8c6',
       },
     })
-    gitment.render('container')`,
+    gitment.render('root')`,
   ],
   navs: [
     {
