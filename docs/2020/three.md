@@ -827,6 +827,8 @@ export default () => {
       }),
     );
     scene.add(cube);
+    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
     // render
     renderer.render(scene, camera);
   };
@@ -874,6 +876,8 @@ export default () => {
       }),
     );
     scene.add(cube);
+    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
     // render
     renderer.render(scene, camera);
   };
@@ -953,8 +957,16 @@ export default () => {
 
 球体（SphereGeometry）的构造函数是：
 
-```
-THREE.SphereGeometry(radius, segmentsWidth, segmentsHeight, phiStart, phiLength, thetaStart, thetaLength)
+```javascript
+THREE.SphereGeometry(
+  radius,
+  segmentsWidth,
+  segmentsHeight,
+  phiStart,
+  phiLength,
+  thetaStart,
+  thetaLength,
+);
 ```
 
 其中，`radius`是半径；`segmentsWidth`表示经度上的切片数；`segmentsHeight`表示纬度上的切片数；`phiStart`表示经度开始的弧度；`phiLength`表示经度跨过的弧度；`thetaStart`表示纬度开始的弧度；`thetaLength`表示纬度跨过的弧度。
@@ -1035,6 +1047,571 @@ export default () => {
     scene.add(axesHelper);
     const cube = new THREE.Mesh(
       new THREE.SphereGeometry(3, 18, 12),
+      new THREE.MeshBasicMaterial({
+        color: 0xff0000,
+        wireframe: true,
+      }),
+    );
+    scene.add(cube);
+    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
+    // render
+    renderer.render(scene, camera);
+  };
+  return (
+    <div>
+      <canvas
+        className="mainCanvas"
+        ref={canvas}
+        height="300px"
+        width="400px"
+      ></canvas>
+    </div>
+  );
+};
+```
+
+#### 圆形
+
+圆形（CircleGeometry）可以创建圆形或者扇形，其构造函数是：
+
+```javascript
+THREE.CircleGeometry(radius, segments, thetaStart, thetaLength);
+```
+
+`new THREE.CircleGeometry(3, 18, Math.PI / 3, Math.PI / 3 * 4)`可以创建一个在 x 轴和 y 轴所在平面的三分之二圆的扇形：
+
+```jsx
+import React, { useEffect, useRef } from 'react';
+
+export default () => {
+  const canvas = useRef();
+  useEffect(() => {
+    init();
+  }, []);
+  const init = () => {
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvas.current,
+    });
+    renderer.setClearColor(0x000000);
+    const scene = new THREE.Scene();
+
+    const camera = new THREE.OrthographicCamera(-4, 4, 3, -3, 1, 10);
+    camera.position.set(4, 4, 5);
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
+    scene.add(camera);
+    const axesHelper = new THREE.AxesHelper(150);
+    scene.add(axesHelper);
+    const cube = new THREE.Mesh(
+      new THREE.CircleGeometry(3, 18, Math.PI / 3, (Math.PI / 3) * 4),
+      new THREE.MeshBasicMaterial({
+        color: 0xff0000,
+        wireframe: true,
+      }),
+    );
+    scene.add(cube);
+    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
+    // render
+    renderer.render(scene, camera);
+  };
+  return (
+    <div>
+      <canvas
+        className="mainCanvas"
+        ref={canvas}
+        height="300px"
+        width="400px"
+      ></canvas>
+    </div>
+  );
+};
+```
+
+#### 圆柱体
+
+圆柱体（CylinderGeometry）的构造函数是：
+
+```javascript
+THREE.CylinderGeometry(
+  radiusTop,
+  radiusBottom,
+  height,
+  radiusSegments,
+  heightSegments,
+  openEnded,
+);
+```
+
+其中，`radiusTop`与`radiusBottom`分别是顶面和底面的半径，由此可知，当这两个参数设置为不同的值时，实际上创建的是一个圆台；`height`是圆柱体的高度；`radiusSegments`与`heightSegments`可类比球体中的分段；`openEnded`是一个布尔值，表示是否没有顶面和底面，缺省值为`false`，表示有顶面和底面。
+
+#### 标准圆柱体
+
+`new THREE.CylinderGeometry(2, 2, 4, 18, 3)`创建一个顶面与底面半径都为`2`，高度为`4`的圆柱体，效果如下：
+
+```jsx
+import React, { useEffect, useRef } from 'react';
+
+export default () => {
+  const canvas = useRef();
+  useEffect(() => {
+    init();
+  }, []);
+  const init = () => {
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvas.current,
+    });
+    renderer.setClearColor(0x000000);
+    const scene = new THREE.Scene();
+
+    const camera = new THREE.OrthographicCamera(-4, 4, 3, -3, 1, 10);
+    camera.position.set(4, 4, 5);
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
+    scene.add(camera);
+    const axesHelper = new THREE.AxesHelper(150);
+    scene.add(axesHelper);
+    const cube = new THREE.Mesh(
+      new THREE.CylinderGeometry(2, 2, 4, 18, 3),
+      new THREE.MeshBasicMaterial({
+        color: 0xff0000,
+        wireframe: true,
+      }),
+    );
+    scene.add(cube);
+    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
+    // render
+    renderer.render(scene, camera);
+  };
+  return (
+    <div>
+      <canvas
+        className="mainCanvas"
+        ref={canvas}
+        height="300px"
+        width="400px"
+      ></canvas>
+    </div>
+  );
+};
+```
+
+#### 圆台
+
+将底面半径设为`3`创建一个圆台：`new THREE.CylinderGeometry(2, 3, 4, 18, 3)`，效果如下：
+
+```jsx
+import React, { useEffect, useRef } from 'react';
+
+export default () => {
+  const canvas = useRef();
+  useEffect(() => {
+    init();
+  }, []);
+  const init = () => {
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvas.current,
+    });
+    renderer.setClearColor(0x000000);
+    const scene = new THREE.Scene();
+
+    const camera = new THREE.OrthographicCamera(-4, 4, 3, -3, 1, 10);
+    camera.position.set(4, 4, 5);
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
+    scene.add(camera);
+    const axesHelper = new THREE.AxesHelper(150);
+    scene.add(axesHelper);
+    const cube = new THREE.Mesh(
+      new THREE.CylinderGeometry(2, 3, 4, 18, 3),
+      new THREE.MeshBasicMaterial({
+        color: 0xff0000,
+        wireframe: true,
+      }),
+    );
+    scene.add(cube);
+    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
+    // render
+    renderer.render(scene, camera);
+  };
+  return (
+    <div>
+      <canvas
+        className="mainCanvas"
+        ref={canvas}
+        height="300px"
+        width="400px"
+      ></canvas>
+    </div>
+  );
+};
+```
+
+#### 无顶面底面
+
+`new THREE.CylinderGeometry(2, 3, 4, 18, 3, true)`将创建一个没有顶面与底面的圆台，效果如下：
+
+```jsx
+import React, { useEffect, useRef } from 'react';
+
+export default () => {
+  const canvas = useRef();
+  useEffect(() => {
+    init();
+  }, []);
+  const init = () => {
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvas.current,
+    });
+    renderer.setClearColor(0x000000);
+    const scene = new THREE.Scene();
+
+    const camera = new THREE.OrthographicCamera(-4, 4, 3, -3, 1, 10);
+    camera.position.set(4, 4, 5);
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
+    scene.add(camera);
+    const axesHelper = new THREE.AxesHelper(150);
+    scene.add(axesHelper);
+    const cube = new THREE.Mesh(
+      new THREE.CylinderGeometry(2, 3, 4, 18, 3, true),
+      new THREE.MeshBasicMaterial({
+        color: 0xff0000,
+        wireframe: true,
+      }),
+    );
+    scene.add(cube);
+    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
+    // render
+    renderer.render(scene, camera);
+  };
+  return (
+    <div>
+      <canvas
+        className="mainCanvas"
+        ref={canvas}
+        height="300px"
+        width="400px"
+      ></canvas>
+    </div>
+  );
+};
+```
+
+#### 正四面体、正八面体、正二十面体
+
+---
+
+正四面体（TetrahedronGeometry）、正八面体（OctahedronGeometry）、正二十面体（IcosahedronGeometry）的构造函数较为类似，分别为：
+
+```javascript
+THREE.TetrahedronGeometry(radius, detail);
+THREE.OctahedronGeometry(radius, detail);
+THREE.IcosahedronGeometry(radius, detail);
+```
+
+其中，`radius`是半径；`detail`是细节层次（Level of Detail）的层数，对于大面片数模型，可以控制在视角靠近物体时，显示面片数多的精细模型，而在离物体较远时，显示面片数较少的粗略模型。这里我们不对`detail`多作展开，一般可以对这个值缺省。
+
+`new THREE.TetrahedronGeometry(3)`创建一个半径为`3`的正四面体：
+
+```jsx
+import React, { useEffect, useRef } from 'react';
+
+export default () => {
+  const canvas = useRef();
+  useEffect(() => {
+    init();
+  }, []);
+  const init = () => {
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvas.current,
+    });
+    renderer.setClearColor(0x000000);
+    const scene = new THREE.Scene();
+
+    const camera = new THREE.OrthographicCamera(-4, 4, 3, -3, 1, 10);
+    camera.position.set(4, 4, 5);
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
+    scene.add(camera);
+    const axesHelper = new THREE.AxesHelper(150);
+    scene.add(axesHelper);
+    const cube = new THREE.Mesh(
+      new THREE.TetrahedronGeometry(3),
+      new THREE.MeshBasicMaterial({
+        color: 0xff0000,
+        wireframe: true,
+      }),
+    );
+    scene.add(cube);
+    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
+    // render
+    renderer.render(scene, camera);
+  };
+  return (
+    <div>
+      <canvas
+        className="mainCanvas"
+        ref={canvas}
+        height="300px"
+        width="400px"
+      ></canvas>
+    </div>
+  );
+};
+```
+
+`new THREE.OctahedronGeometry(3)`创建一个半径为`3`的正八面体：
+
+```jsx
+import React, { useEffect, useRef } from 'react';
+
+export default () => {
+  const canvas = useRef();
+  useEffect(() => {
+    init();
+  }, []);
+  const init = () => {
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvas.current,
+    });
+    renderer.setClearColor(0x000000);
+    const scene = new THREE.Scene();
+
+    const camera = new THREE.OrthographicCamera(-4, 4, 3, -3, 1, 10);
+    camera.position.set(4, 4, 5);
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
+    scene.add(camera);
+    const axesHelper = new THREE.AxesHelper(150);
+    scene.add(axesHelper);
+    const cube = new THREE.Mesh(
+      new THREE.OctahedronGeometry(3),
+      new THREE.MeshBasicMaterial({
+        color: 0xff0000,
+        wireframe: true,
+      }),
+    );
+    scene.add(cube);
+    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
+    // render
+    renderer.render(scene, camera);
+  };
+  return (
+    <div>
+      <canvas
+        className="mainCanvas"
+        ref={canvas}
+        height="300px"
+        width="400px"
+      ></canvas>
+    </div>
+  );
+};
+```
+
+`new THREE.IcosahedronGeometry(3)`创建一个半径为`3`的正二十面体：
+
+```jsx
+import React, { useEffect, useRef } from 'react';
+
+export default () => {
+  const canvas = useRef();
+  useEffect(() => {
+    init();
+  }, []);
+  const init = () => {
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvas.current,
+    });
+    renderer.setClearColor(0x000000);
+    const scene = new THREE.Scene();
+
+    const camera = new THREE.OrthographicCamera(-4, 4, 3, -3, 1, 10);
+    camera.position.set(4, 4, 5);
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
+    scene.add(camera);
+    const axesHelper = new THREE.AxesHelper(150);
+    scene.add(axesHelper);
+    const cube = new THREE.Mesh(
+      new THREE.IcosahedronGeometry(3),
+      new THREE.MeshBasicMaterial({
+        color: 0xff0000,
+        wireframe: true,
+      }),
+    );
+    scene.add(cube);
+    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
+    // render
+    renderer.render(scene, camera);
+  };
+  return (
+    <div>
+      <canvas
+        className="mainCanvas"
+        ref={canvas}
+        height="300px"
+        width="400px"
+      ></canvas>
+    </div>
+  );
+};
+```
+
+#### 圆环面
+
+圆环面（TorusGeometry）就是甜甜圈的形状，其构造函数是：
+
+```javascript
+THREE.TorusGeometry(radius, tube, radialSegments, tubularSegments, arc);
+```
+
+![img](../../assets/images/01YZGqQBQI0k.png)
+
+其中，`radius`是圆环半径；`tube`是管道半径；`radialSegments`与`tubularSegments`分别是两个分段数，详见上图；`arc`是圆环面的弧度，缺省值为`Math.PI * 2`。
+
+`new THREE.TorusGeometry(3, 1, 4, 8)`创建一个粗糙的圆环面：
+
+```jsx
+import React, { useEffect, useRef } from 'react';
+
+export default () => {
+  const canvas = useRef();
+  useEffect(() => {
+    init();
+  }, []);
+  const init = () => {
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvas.current,
+    });
+    renderer.setClearColor(0x000000);
+    const scene = new THREE.Scene();
+
+    const camera = new THREE.OrthographicCamera(-4, 4, 3, -3, 1, 10);
+    camera.position.set(4, 4, 5);
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
+    scene.add(camera);
+    const axesHelper = new THREE.AxesHelper(150);
+    scene.add(axesHelper);
+    const cube = new THREE.Mesh(
+      new THREE.TorusGeometry(3, 1, 4, 8),
+      new THREE.MeshBasicMaterial({
+        color: 0xff0000,
+        wireframe: true,
+      }),
+    );
+    scene.add(cube);
+    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
+    // render
+    renderer.render(scene, camera);
+  };
+  return (
+    <div>
+      <canvas
+        className="mainCanvas"
+        ref={canvas}
+        height="300px"
+        width="400px"
+      ></canvas>
+    </div>
+  );
+};
+```
+
+`new THREE.TorusGeometry(3, 1, 12, 18)`创建一个较为精细的圆环面：
+
+```jsx
+import React, { useEffect, useRef } from 'react';
+
+export default () => {
+  const canvas = useRef();
+  useEffect(() => {
+    init();
+  }, []);
+  const init = () => {
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvas.current,
+    });
+    renderer.setClearColor(0x000000);
+    const scene = new THREE.Scene();
+
+    const camera = new THREE.OrthographicCamera(-4, 4, 3, -3, 1, 10);
+    camera.position.set(4, 4, 5);
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
+    scene.add(camera);
+    const axesHelper = new THREE.AxesHelper(150);
+    scene.add(axesHelper);
+    const cube = new THREE.Mesh(
+      new THREE.TorusGeometry(3, 1, 12, 18),
+      new THREE.MeshBasicMaterial({
+        color: 0xff0000,
+        wireframe: true,
+      }),
+    );
+    scene.add(cube);
+    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
+    // render
+    renderer.render(scene, camera);
+  };
+  return (
+    <div>
+      <canvas
+        className="mainCanvas"
+        ref={canvas}
+        height="300px"
+        width="400px"
+      ></canvas>
+    </div>
+  );
+};
+```
+
+#### 圆环结
+
+圆环结（TorusKnotGeometry）就是打了结的甜甜圈，其构造参数为：
+
+```javascript
+THREE.TorusKnotGeometry(
+  radius,
+  tube,
+  radialSegments,
+  tubularSegments,
+  p,
+  q,
+  heightScale,
+);
+```
+
+前四个参数在圆环面中已经有所介绍，`p`和`q`是控制其样式的参数，一般可以缺省，`heightScale`是在 z 轴方向上的缩放。
+
+`new THREE.TorusKnotGeometry(2, 0.5, 32, 8)`的效果：
+
+```jsx
+import React, { useEffect, useRef } from 'react';
+
+export default () => {
+  const canvas = useRef();
+  useEffect(() => {
+    init();
+  }, []);
+  const init = () => {
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvas.current,
+    });
+    renderer.setClearColor(0x000000);
+    const scene = new THREE.Scene();
+
+    const camera = new THREE.OrthographicCamera(-4, 4, 3, -3, 1, 10);
+    camera.position.set(4, 4, 5);
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
+    scene.add(camera);
+    const axesHelper = new THREE.AxesHelper(150);
+    scene.add(axesHelper);
+    const cube = new THREE.Mesh(
+      new THREE.TorusKnotGeometry(2, 0.5, 32, 8),
       new THREE.MeshBasicMaterial({
         color: 0xff0000,
         wireframe: true,
