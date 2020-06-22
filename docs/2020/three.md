@@ -1008,6 +1008,57 @@ export default () => {
 };
 ```
 
+`segmentsWidth`相当于经度被切成了几瓣，而`segmentsHeight`相当于纬度被切成了几层。因为在图形底层的实现中，并没有曲线的概念，曲线都是由多个折线近似构成的。对于球体而言，当这两个值较大的时候，形成的多面体就可以近似看做是球体了。
+
+`new THREE.SphereGeometry(3, 18, 12)`的效果：
+
+```jsx
+import React, { useEffect, useRef } from 'react';
+
+export default () => {
+  const canvas = useRef();
+  useEffect(() => {
+    init();
+  }, []);
+  const init = () => {
+    const renderer = new THREE.WebGLRenderer({
+      canvas: canvas.current,
+    });
+    renderer.setClearColor(0x000000);
+    const scene = new THREE.Scene();
+
+    const camera = new THREE.OrthographicCamera(-4, 4, 3, -3, 1, 10);
+    camera.position.set(4, 4, 5);
+    camera.lookAt(new THREE.Vector3(0, 0, 0));
+    scene.add(camera);
+    const axesHelper = new THREE.AxesHelper(150);
+    scene.add(axesHelper);
+    const cube = new THREE.Mesh(
+      new THREE.SphereGeometry(3, 18, 12),
+      new THREE.MeshBasicMaterial({
+        color: 0xff0000,
+        wireframe: true,
+      }),
+    );
+    scene.add(cube);
+    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
+    // render
+    renderer.render(scene, camera);
+  };
+  return (
+    <div>
+      <canvas
+        className="mainCanvas"
+        ref={canvas}
+        height="300px"
+        width="400px"
+      ></canvas>
+    </div>
+  );
+};
+```
+
 ## 模型的导入
 
 Three.js 有一系列导入外部文件的辅助函数，是在`three.js`之外的，使用前需要额外下载，在https://github.com/mrdoob/three.js/tree/master/examples/js/loaders可以找到。

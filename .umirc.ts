@@ -12,13 +12,13 @@ export default defineConfig({
       src: '/blog/js/three/build/three.js',
     },
     {
-      src: '/js/three/examples/js/loaders/OBJLoader.js',
+      src: '/blog/js/three/examples/js/loaders/OBJLoader.js',
     },
     {
-      src: '/js/three/examples/js/loaders/MTLLoader.js',
+      src: '/blog/js/three/examples/js/loaders/MTLLoader.js',
     },
     {
-      src: '/js/three/examples/js/controls/OrbitControls.js',
+      src: '/blog/js/three/examples/js/controls/OrbitControls.js',
     },
   ],
   navs: [
