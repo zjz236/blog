@@ -284,6 +284,7 @@ renderer.render(scene, camera);
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
 
 export default () => {
   const canvas = useRef();
@@ -385,6 +386,7 @@ scene.add(cube);
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
 
 export default () => {
   const canvas = useRef();
@@ -438,6 +440,7 @@ var camera = new THREE.OrthographicCamera(-1, 1, 1.5, -1.5, 1, 10);
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
 
 export default () => {
   const canvas = useRef();
@@ -492,6 +495,7 @@ camera.position.set(1, 0, 5);
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
 
 export default () => {
   const canvas = useRef();
@@ -543,6 +547,7 @@ camera.position.set(4, -3, 5);
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
 
 export default () => {
   const canvas = useRef();
@@ -594,6 +599,7 @@ camera.lookAt(new THREE.Vector3(0, 0, 0));
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
 
 export default () => {
   const canvas = useRef();
@@ -681,6 +687,7 @@ scene.add(cube);
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
 
 export default () => {
   const canvas = useRef();
@@ -728,6 +735,7 @@ export default () => {
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
 
 export default () => {
   const canvas = useRef();
@@ -800,6 +808,8 @@ THREE.CubeGeometry(
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export default () => {
   const canvas = useRef();
@@ -827,7 +837,7 @@ export default () => {
       }),
     );
     scene.add(cube);
-    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    const controls = new OrbitControls(camera, canvas.current); //创建控件对象
     controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
     // render
     renderer.render(scene, camera);
@@ -849,6 +859,8 @@ export default () => {
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export default () => {
   const canvas = useRef();
@@ -876,7 +888,7 @@ export default () => {
       }),
     );
     scene.add(cube);
-    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    const controls = new OrbitControls(camera, canvas.current); //创建控件对象
     controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
     // render
     renderer.render(scene, camera);
@@ -908,6 +920,8 @@ THREE.PlaneGeometry(width, height, widthSegments, heightSegments);
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export default () => {
   const canvas = useRef();
@@ -935,7 +949,7 @@ export default () => {
       }),
     );
     scene.add(cube);
-    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    const controls = new OrbitControls(camera, canvas.current); //创建控件对象
     controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
     // render
     renderer.render(scene, camera);
@@ -975,6 +989,8 @@ THREE.SphereGeometry(
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export default () => {
   const canvas = useRef();
@@ -1002,7 +1018,7 @@ export default () => {
       }),
     );
     scene.add(cube);
-    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    const controls = new OrbitControls(camera, canvas.current); //创建控件对象
     controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
     // render
     renderer.render(scene, camera);
@@ -1026,6 +1042,8 @@ export default () => {
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export default () => {
   const canvas = useRef();
@@ -1053,7 +1071,7 @@ export default () => {
       }),
     );
     scene.add(cube);
-    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    const controls = new OrbitControls(camera, canvas.current); //创建控件对象
     controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
     // render
     renderer.render(scene, camera);
@@ -1083,6 +1101,8 @@ THREE.CircleGeometry(radius, segments, thetaStart, thetaLength);
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export default () => {
   const canvas = useRef();
@@ -1110,7 +1130,7 @@ export default () => {
       }),
     );
     scene.add(cube);
-    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    const controls = new OrbitControls(camera, canvas.current); //创建控件对象
     controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
     // render
     renderer.render(scene, camera);
@@ -1151,6 +1171,8 @@ THREE.CylinderGeometry(
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export default () => {
   const canvas = useRef();
@@ -1178,7 +1200,7 @@ export default () => {
       }),
     );
     scene.add(cube);
-    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    const controls = new OrbitControls(camera, canvas.current); //创建控件对象
     controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
     // render
     renderer.render(scene, camera);
@@ -1202,6 +1224,8 @@ export default () => {
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export default () => {
   const canvas = useRef();
@@ -1229,7 +1253,7 @@ export default () => {
       }),
     );
     scene.add(cube);
-    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    const controls = new OrbitControls(camera, canvas.current); //创建控件对象
     controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
     // render
     renderer.render(scene, camera);
@@ -1253,6 +1277,8 @@ export default () => {
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export default () => {
   const canvas = useRef();
@@ -1280,7 +1306,7 @@ export default () => {
       }),
     );
     scene.add(cube);
-    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    const controls = new OrbitControls(camera, canvas.current); //创建控件对象
     controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
     // render
     renderer.render(scene, camera);
@@ -1316,6 +1342,8 @@ THREE.IcosahedronGeometry(radius, detail);
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export default () => {
   const canvas = useRef();
@@ -1343,7 +1371,7 @@ export default () => {
       }),
     );
     scene.add(cube);
-    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    const controls = new OrbitControls(camera, canvas.current); //创建控件对象
     controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
     // render
     renderer.render(scene, camera);
@@ -1365,6 +1393,8 @@ export default () => {
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export default () => {
   const canvas = useRef();
@@ -1392,7 +1422,7 @@ export default () => {
       }),
     );
     scene.add(cube);
-    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    const controls = new OrbitControls(camera, canvas.current); //创建控件对象
     controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
     // render
     renderer.render(scene, camera);
@@ -1414,6 +1444,8 @@ export default () => {
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export default () => {
   const canvas = useRef();
@@ -1441,7 +1473,7 @@ export default () => {
       }),
     );
     scene.add(cube);
-    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    const controls = new OrbitControls(camera, canvas.current); //创建控件对象
     controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
     // render
     renderer.render(scene, camera);
@@ -1475,6 +1507,8 @@ THREE.TorusGeometry(radius, tube, radialSegments, tubularSegments, arc);
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export default () => {
   const canvas = useRef();
@@ -1502,7 +1536,7 @@ export default () => {
       }),
     );
     scene.add(cube);
-    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    const controls = new OrbitControls(camera, canvas.current); //创建控件对象
     controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
     // render
     renderer.render(scene, camera);
@@ -1524,6 +1558,8 @@ export default () => {
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export default () => {
   const canvas = useRef();
@@ -1551,7 +1587,7 @@ export default () => {
       }),
     );
     scene.add(cube);
-    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    const controls = new OrbitControls(camera, canvas.current); //创建控件对象
     controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
     // render
     renderer.render(scene, camera);
@@ -1591,6 +1627,8 @@ THREE.TorusKnotGeometry(
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 export default () => {
   const canvas = useRef();
@@ -1618,7 +1656,7 @@ export default () => {
       }),
     );
     scene.add(cube);
-    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    const controls = new OrbitControls(camera, canvas.current); //创建控件对象
     controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
     // render
     renderer.render(scene, camera);
@@ -1657,6 +1695,10 @@ Three.js 有一系列导入外部文件的辅助函数，是在`three.js`之外�
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
+import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader';
 import buildObj from '../../assets/three/building2.obj';
 import buildMtl from '../../assets/three/building2.mtl';
 
@@ -1676,9 +1718,9 @@ export default () => {
     camera.position.set(500, 500, 500);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
     scene.add(camera);
-    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    const controls = new OrbitControls(camera, canvas.current); //创建控件对象
     controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
-    const loader = new THREE.OBJLoader();
+    const loader = new OBJLoader();
     loader.load(buildObj, obj => {
       scene.add(obj);
       renderer.render(scene, camera);
@@ -1711,6 +1753,10 @@ export default () => {
 
 ```jsx
 import React, { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
+import { MTLLoader } from 'three/examples/jsm/loaders/MTLLoader';
 import buildObj from '../../assets/three/building2.obj';
 import buildMtl from '../../assets/three/building2.mtl';
 
@@ -1730,14 +1776,14 @@ export default () => {
     camera.position.set(500, 500, 500);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
     scene.add(camera);
-    const controls = new THREE.OrbitControls(camera, canvas.current); //创建控件对象
+    const controls = new OrbitControls(camera, canvas.current); //创建控件对象
     controls.addEventListener('change', () => renderer.render(scene, camera)); //监听鼠标、键盘事件
-    const OBJLoader = new THREE.OBJLoader(); //obj加载器
-    const MTLLoader = new THREE.MTLLoader(); //材质文件加载器
-    MTLLoader.load(buildMtl, materials => {
+    const OBJ = new OBJLoader(); //obj加载器
+    const MTL = new MTLLoader(); //材质文件加载器
+    MTL.load(buildMtl, materials => {
       //obj的模型会和MaterialCreator包含的材质对应起来
-      OBJLoader.setMaterials(materials);
-      OBJLoader.load(buildObj, function(obj) {
+      OBJ.setMaterials(materials);
+      OBJ.load(buildObj, function(obj) {
         console.log(obj);
         scene.add(obj); //返回的组对象插入场景中
         renderer.render(scene, camera);
