@@ -2,11 +2,11 @@
 
 ## 前言
 
-在平时无论自己开发时，还是项目团队联调时总会发生跨域。自己开发时，端口一般不同，团队开发时，域名、ip、端口都不同。之前我自己开发的时候都是后端处理跨域问题。在海康实习的一段时间里，我发现在海康和后端联调从来没有跨域处理过，而且network里的ip端口也是自己本地前端运行的端口，这时候我稍微关注了一下前端的代理。
+在平时无论自己开发时，还是项目团队联调时总会发生跨域。自己开发时，端口一般不同，团队开发时，域名、ip、端口都不同。后面我稍微关注了一下几种常见脚手架的代理方式。
 
-## VueCli2下配置代理
+## VueCli2 下配置代理
 
-在vue-cli的项目根目录下有个config文件夹，打开里面的index.js配置文件，dev长如下所示：
+在 vue-cli 的项目根目录下有个 config 文件夹，打开里面的 index.js 配置文件，dev 长如下所示：
 
 ```javascript
 dev: {
@@ -15,48 +15,50 @@ dev: {
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},   
+    proxyTable: {},
     cssSourceMap: false
  }
 ```
 
-如果后端的地址是http://aaa.com:3000 ，这时候在dev的proxyTable下如下所示：
+如果后端的地址是http://aaa.com:3000 ，这时候在 dev 的 proxyTable 下如下所示：
 
 ```javascript
-proxyTable: [{
-	context: ['/api/'],
-	target: 'http://aaa.com:3000',
-	changeOrigin: true
-}]
+proxyTable: [
+  {
+    context: ['/api/'],
+    target: 'http://aaa.com:3000',
+    changeOrigin: true,
+  },
+];
 ```
 
-最后重启项目npm run dev
+最后重启项目 npm run dev
 
-## VueCli3和VueCli4下配置代理
+## VueCli3 和 VueCli4 下配置代理
 
-这里的vue代理是 vue静态服务器做代理。使用的是 [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) 这个模块。
+这里的 vue 代理是 vue 静态服务器做代理。使用的是 [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) 这个模块。
 
-在vue-cli3的项目根目录下新建vue.config.js配置文件，dev长如下所示：
+在 vue-cli3 的项目根目录下新建 vue.config.js 配置文件，dev 长如下所示：
 
 ```javascript
 module.exports = {
-    devServer: {
-      proxy: {
-        '/api': {
-          target: 'http://aaa.com:3000',
-          changeOrigin: true,
-          pathRewrite: { }
-        }
-      }
-    }
-  }
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://aaa.com:3000',
+        changeOrigin: true,
+        pathRewrite: {},
+      },
+    },
+  },
+};
 ```
 
-最后重启项目npm run serve
+最后重启项目 npm run serve
 
-## create-react-app下配置代理
+## create-react-app 下配置代理
 
-安装http-proxy-middleware:
+安装 http-proxy-middleware:
 
 ```bash
 npm i http-proxy-middleware
@@ -66,24 +68,22 @@ npm i http-proxy-middleware
 
 ```javascript
 const proxy = require('http-proxy-middleware');
-module.exports = function (app) {
+module.exports = function(app) {
   app.use(
-      proxy(
-          '/api', {
-          target: 'http://aaa.com:3000',
-          changeOrigin: true,
-          pathRewrite: { }
-        }
-      )
+    proxy('/api', {
+      target: 'http://aaa.com:3000',
+      changeOrigin: true,
+      pathRewrite: {},
+    }),
   );
-}
+};
 ```
 
-最后重启项目npm start
+最后重启项目 npm start
 
-## umi下配置代理
+## umi 下配置代理
 
-在根目录下的.umirc.ts或.umirc.js如下配置
+在根目录下的.umirc.ts 或.umirc.js 如下配置
 
 ```javascript
 import { defineConfig } from 'umi';
@@ -102,4 +102,4 @@ export default defineConfig({
 
 ```
 
-最后重启项目npm start
+最后重启项目 npm start
