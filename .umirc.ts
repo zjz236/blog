@@ -13,6 +13,7 @@ export default defineConfig({
       path: 'https://github.com/zjz236',
     },
   ],
+  plugins: ['./live2d'],
   chainWebpack(memo: any, { env, webpack, createCSSRule }: any) {
     memo.module
       .rule('')

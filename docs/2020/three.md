@@ -315,12 +315,7 @@ export default () => {
   };
   return (
     <div>
-      <canvas
-        className="mainCanvas"
-        ref={canvas}
-        height="300px"
-        width="400px"
-      ></canvas>
+      <canvas ref={canvas} height="300px" width="400px"></canvas>
     </div>
   );
 };
@@ -419,12 +414,7 @@ export default () => {
   };
   return (
     <div>
-      <canvas
-        className="mainCanvas"
-        ref={canvas}
-        height="300px"
-        width="400px"
-      ></canvas>
+      <canvas ref={canvas} height="300px" width="400px"></canvas>
     </div>
   );
 };
@@ -473,12 +463,7 @@ export default () => {
   };
   return (
     <div>
-      <canvas
-        className="mainCanvas"
-        ref={canvas}
-        height="300px"
-        width="400px"
-      ></canvas>
+      <canvas ref={canvas} height="300px" width="400px"></canvas>
     </div>
   );
 };
@@ -528,12 +513,7 @@ export default () => {
   };
   return (
     <div>
-      <canvas
-        className="mainCanvas"
-        ref={canvas}
-        height="300px"
-        width="400px"
-      ></canvas>
+      <canvas ref={canvas} height="300px" width="400px"></canvas>
     </div>
   );
 };
@@ -580,12 +560,7 @@ export default () => {
   };
   return (
     <div>
-      <canvas
-        className="mainCanvas"
-        ref={canvas}
-        height="300px"
-        width="400px"
-      ></canvas>
+      <canvas ref={canvas} height="300px" width="400px"></canvas>
     </div>
   );
 };
@@ -633,12 +608,7 @@ export default () => {
   };
   return (
     <div>
-      <canvas
-        className="mainCanvas"
-        ref={canvas}
-        height="300px"
-        width="400px"
-      ></canvas>
+      <canvas ref={canvas} height="300px" width="400px"></canvas>
     </div>
   );
 };
@@ -720,12 +690,7 @@ export default () => {
   };
   return (
     <div>
-      <canvas
-        className="mainCanvas"
-        ref={canvas}
-        height="300px"
-        width="400px"
-      ></canvas>
+      <canvas ref={canvas} height="300px" width="400px"></canvas>
     </div>
   );
 };
@@ -768,12 +733,7 @@ export default () => {
   };
   return (
     <div>
-      <canvas
-        className="mainCanvas"
-        ref={canvas}
-        height="300px"
-        width="400px"
-      ></canvas>
+      <canvas ref={canvas} height="300px" width="400px"></canvas>
     </div>
   );
 };
@@ -844,12 +804,7 @@ export default () => {
   };
   return (
     <div>
-      <canvas
-        className="mainCanvas"
-        ref={canvas}
-        height="300px"
-        width="400px"
-      ></canvas>
+      <canvas ref={canvas} height="300px" width="400px"></canvas>
     </div>
   );
 };
@@ -895,12 +850,7 @@ export default () => {
   };
   return (
     <div>
-      <canvas
-        className="mainCanvas"
-        ref={canvas}
-        height="300px"
-        width="400px"
-      ></canvas>
+      <canvas ref={canvas} height="300px" width="400px"></canvas>
     </div>
   );
 };
@@ -956,12 +906,7 @@ export default () => {
   };
   return (
     <div>
-      <canvas
-        className="mainCanvas"
-        ref={canvas}
-        height="300px"
-        width="400px"
-      ></canvas>
+      <canvas ref={canvas} height="300px" width="400px"></canvas>
     </div>
   );
 };
@@ -1025,12 +970,7 @@ export default () => {
   };
   return (
     <div>
-      <canvas
-        className="mainCanvas"
-        ref={canvas}
-        height="300px"
-        width="400px"
-      ></canvas>
+      <canvas ref={canvas} height="300px" width="400px"></canvas>
     </div>
   );
 };
@@ -1078,12 +1018,7 @@ export default () => {
   };
   return (
     <div>
-      <canvas
-        className="mainCanvas"
-        ref={canvas}
-        height="300px"
-        width="400px"
-      ></canvas>
+      <canvas ref={canvas} height="300px" width="400px"></canvas>
     </div>
   );
 };
@@ -1137,12 +1072,7 @@ export default () => {
   };
   return (
     <div>
-      <canvas
-        className="mainCanvas"
-        ref={canvas}
-        height="300px"
-        width="400px"
-      ></canvas>
+      <canvas ref={canvas} height="300px" width="400px"></canvas>
     </div>
   );
 };
@@ -1207,12 +1137,7 @@ export default () => {
   };
   return (
     <div>
-      <canvas
-        className="mainCanvas"
-        ref={canvas}
-        height="300px"
-        width="400px"
-      ></canvas>
+      <canvas ref={canvas} height="300px" width="400px"></canvas>
     </div>
   );
 };
@@ -1260,12 +1185,7 @@ export default () => {
   };
   return (
     <div>
-      <canvas
-        className="mainCanvas"
-        ref={canvas}
-        height="300px"
-        width="400px"
-      ></canvas>
+      <canvas ref={canvas} height="300px" width="400px"></canvas>
     </div>
   );
 };
@@ -1313,12 +1233,7 @@ export default () => {
   };
   return (
     <div>
-      <canvas
-        className="mainCanvas"
-        ref={canvas}
-        height="300px"
-        width="400px"
-      ></canvas>
+      <canvas ref={canvas} height="300px" width="400px"></canvas>
     </div>
   );
 };
@@ -1378,12 +1293,7 @@ export default () => {
   };
   return (
     <div>
-      <canvas
-        className="mainCanvas"
-        ref={canvas}
-        height="300px"
-        width="400px"
-      ></canvas>
+      <canvas ref={canvas} height="300px" width="400px"></canvas>
     </div>
   );
 };
@@ -1429,12 +1339,7 @@ export default () => {
   };
   return (
     <div>
-      <canvas
-        className="mainCanvas"
-        ref={canvas}
-        height="300px"
-        width="400px"
-      ></canvas>
+      <canvas ref={canvas} height="300px" width="400px"></canvas>
     </div>
   );
 };
@@ -1480,12 +1385,7 @@ export default () => {
   };
   return (
     <div>
-      <canvas
-        className="mainCanvas"
-        ref={canvas}
-        height="300px"
-        width="400px"
-      ></canvas>
+      <canvas ref={canvas} height="300px" width="400px"></canvas>
     </div>
   );
 };
@@ -1543,12 +1443,7 @@ export default () => {
   };
   return (
     <div>
-      <canvas
-        className="mainCanvas"
-        ref={canvas}
-        height="300px"
-        width="400px"
-      ></canvas>
+      <canvas ref={canvas} height="300px" width="400px"></canvas>
     </div>
   );
 };
@@ -1594,12 +1489,7 @@ export default () => {
   };
   return (
     <div>
-      <canvas
-        className="mainCanvas"
-        ref={canvas}
-        height="300px"
-        width="400px"
-      ></canvas>
+      <canvas ref={canvas} height="300px" width="400px"></canvas>
     </div>
   );
 };
@@ -1663,12 +1553,7 @@ export default () => {
   };
   return (
     <div>
-      <canvas
-        className="mainCanvas"
-        ref={canvas}
-        height="300px"
-        width="400px"
-      ></canvas>
+      <canvas ref={canvas} height="300px" width="400px"></canvas>
     </div>
   );
 };
@@ -1738,12 +1623,7 @@ export default () => {
   };
   return (
     <div>
-      <canvas
-        className="mainCanvas"
-        ref={canvas}
-        height="600px"
-        width="800px"
-      ></canvas>
+      <canvas ref={canvas} height="600px" width="800px"></canvas>
     </div>
   );
 };
@@ -1802,12 +1682,7 @@ export default () => {
   };
   return (
     <div>
-      <canvas
-        className="mainCanvas"
-        ref={canvas}
-        height="600px"
-        width="800px"
-      ></canvas>
+      <canvas ref={canvas} height="600px" width="800px"></canvas>
     </div>
   );
 };
