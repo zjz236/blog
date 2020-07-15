@@ -8,6 +8,7 @@ export default defineConfig({
   logo: '/blog/logo.png',
   favicon: '/blog/favicon.ico',
   exportStatic: {},
+  hash: true,
   navs: [
     {
       title: 'GitHub',
