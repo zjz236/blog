@@ -25,3 +25,4 @@ jobs:
           dst_token: ${{ secrets.GITEE_TOKEN }}
           account_type: user
           clone_style: "ssh"
+          force_update: true
