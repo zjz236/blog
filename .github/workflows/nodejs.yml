@@ -14,7 +14,7 @@ jobs:
         env:
           ACCESS_TOKEN: ${{ secrets.TOKEN }}
           BRANCH: gh-pages
-          FOLDER: distGITEE_KEY
+          FOLDER: dist
           BUILD_SCRIPT: npm install && npm run docs:build
       - name: Mirror to gitee
         uses: pixta-dev/repository-mirroring-action@v1
