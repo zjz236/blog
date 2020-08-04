@@ -22,9 +22,9 @@ jobs:
           BRANCH: gh-pages
           FOLDER: distGITEE_KEY
       - name: Mirror to gitee
-          uses: pixta-dev/repository-mirroring-action@v1
-          with:
-            target_repo_url:
-              git@gitee.com:zjz236/blog.git
-            ssh_private_key:
-              ${{ secrets.GITEE_KEY }}
+        uses: pixta-dev/repository-mirroring-action@v1
+        with:
+          target_repo_url:
+            git@gitee.com:zjz236/blog.git
+          ssh_private_key:
+            ${{ secrets.GITEE_KEY }}
