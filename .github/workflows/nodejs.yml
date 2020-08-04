@@ -8,23 +8,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@master # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+        uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+        with:
+          persist-credentials: false
+      - name: Install and Build
+        run: |
+          npm install
+          npm run docs:build
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@master
+        uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{ secrets.TOKEN }}
           BRANCH: gh-pages
-          FOLDER: dist,
-          BUILD_SCRIPT: npm install && npm run docs:build
-  mirror_to_gitee:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@master
+          FOLDER: distGITEE_KEY
       - name: Mirror to gitee
-        uses: pixta-dev/repository-mirroring-action@master
-        with:
-          target_repo_url:
-            git@gitee.com:tsund/test.git
-          ssh_private_key:
-            ${{ secrets.GITEE_KEY }}
+          uses: pixta-dev/repository-mirroring-action@v1
+          with:
+            target_repo_url:
+              git@gitee.com:zjz236/blog.git
+            ssh_private_key:
+              ${{ secrets.GITEE_KEY }}
