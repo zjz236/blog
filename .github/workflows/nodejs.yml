@@ -17,9 +17,11 @@ jobs:
           FOLDER: dist
           BUILD_SCRIPT: npm install && npm run docs:build
       - name: Mirror to gitee
-        uses: pixta-dev/repository-mirroring-action@v1
+        uses: Yikun/hub-mirror-action@master
         with:
-          target_repo_url:
-            git@gitee.com:zjz236/blog.git
-          ssh_private_key:
-            ${{ secrets.GITEE_KEY }}
+          src: github/zjz236
+          dst: gitee/zjz236
+          dst_key: ${{ secrets.GITEE_KEY }}
+          dst_token: ${{ secrets.GITEE_TOKEN }}
+          account_type: user
+          clone_style: "ssh"
