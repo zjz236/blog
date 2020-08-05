@@ -10,7 +10,7 @@ const Live2dModel = (props: any) => {
   const model2 =
     'https://cdn.jsdelivr.net/gh/QiShaoXuan/live2DModel@1.0.0/live2d-widget-model-koharu/assets/koharu.model.json';
   const [isLoaded, setIsLoaded] = useState(true);
-  const [route, setRoute] = useState(history.location);
+  let route = history.location;
   const [style, setStyle] = useState({
     width: 280,
     height: 250,
@@ -21,7 +21,7 @@ const Live2dModel = (props: any) => {
       if (route.pathname !== val.pathname) {
         initLive2d();
       }
-      setRoute(val);
+      route = val;
     });
   }, []);
   const initLive2d = () => {
