@@ -76,7 +76,20 @@ IT 一点通的店面
 
 ![80acbacf9101b511ba6227d8e197206](../../assets/images/80acbacf9101b511ba6227d8e197206.jpg)
 
-<video  controls="controls"  loop="loop" style="width:100%" src="/blog/assets/video/dc42058175e7fee392b2f009fa5a1782.mp4"></video>
+```jsx | inline
+import React from 'react';
+import graduation from '../../assets/video/graduation.mp4';
+export default () => {
+  return (
+    <video
+      controls="controls"
+      loop="loop"
+      style={{ width: '100%' }}
+      src={graduation}
+    ></video>
+  );
+};
+```
 
 ![9b3cab46cbf59dbe9f6a784d7e1eb4a](../../assets/images/9b3cab46cbf59dbe9f6a784d7e1eb4a.jpg)
 

@@ -18,11 +18,10 @@ const Live2dModel = (props: any) => {
   useEffect(() => {
     initLive2d();
     history.listen(val => {
-      console.log(route.pathname, val.pathname);
       if (route.pathname !== val.pathname) {
         initLive2d();
       }
-      setRoute(route);
+      setRoute(val);
     });
   }, []);
   const initLive2d = () => {

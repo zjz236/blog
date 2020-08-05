@@ -27,7 +27,7 @@ export default defineConfig({
   chainWebpack(memo: any, { env, webpack, createCSSRule }: any) {
     memo.module
       .rule('')
-      .test(/\.(obj|mtl)(\?.*)?$/)
+      .test(/\.(mp4)(\?.*)?$/)
       .use('')
       .loader('url-loader')
       .options({ limit: 0 });
