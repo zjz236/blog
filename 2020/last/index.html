@@ -7,18 +7,29 @@
       content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"
     />
     <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico" />
-    <link rel="stylesheet" href="/blog/umi.0f8023c3.css" />
+    <link rel="stylesheet" href="/blog/umi.26a72b88.css" />
     <script>
       window.routerBase = "/blog/";
     </script>
     <script>
-      //! umi version: 3.3.3
+      //! umi version: 3.5.21
     </script>
-    <title>回顾2020</title>
+    <script>
+      !(function () {
+        var e = localStorage.getItem("dumi:prefers-color"),
+          t = window.matchMedia("(prefers-color-scheme: dark)").matches,
+          r = ["light", "dark", "auto"];
+        document.documentElement.setAttribute(
+          "data-prefers-color",
+          e === r[2] ? (t ? r[1] : r[0]) : r.indexOf(e) > -1 ? e : r[0]
+        );
+      })();
+    </script>
+    <title>回顾2020 - 小朱blogs</title>
   </head>
   <body>
     <div id="root"></div>
 
-    <script src="/blog/umi.a92229e6.js"></script>
+    <script src="/blog/umi.5cc6368a.js"></script>
   </body>
 </html>
